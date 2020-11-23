@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState} from "react";
 import axios from "axios";
+import { useState } from "react";
 
 export default function Weather(){
 
@@ -8,7 +9,7 @@ function handleResponse(response){
 }
 
 
-    let url="https://api.openweathermap.org/data/2.5/weather?q=London&appid=d65010f0ee255fc171c7d8183e8bf68a"
+    let url="https://api.openweathermap.org/data/2.5/weather?q=London&appid=d65010f0ee255fc171c7d8183e8bf68a&units=metric"
     axios.get(url).then(handleResponse)
    
    
