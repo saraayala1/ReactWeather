@@ -21,4 +21,14 @@
   font-size: 20px;
   margin-left: 10px;
   padding: 5px 10px;
+  transition: 200ms;
+}
+.submit:hover,
+.currentLocation:hover {
+  background-color: rgb(1, 1, 112);
+  color: white;
+  cursor: pointer;
+}
+h1 {
+  color: rgb(0, 0, 71);
 }
