@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import axios from "axios";
 import { useState } from "react";
+import './App.css'
 
 export default function Weather(){
 
@@ -16,8 +17,8 @@ function handleResponse(response){
    
     return (
         <div>
-            <input type="text" placeholder="Type city here..." autoFocus="on" />
-           <input type="submit" value="search"/> 
+            <input type="text" className="searchbar" placeholder="Type city here..." autoFocus="on" />
+           <input type="submit" className="submit" value="search"/> 
        </div>
     )
 }
