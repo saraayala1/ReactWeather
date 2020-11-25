@@ -15,6 +15,7 @@ function handleResponse(response){
         <div>
             <input type="text" className="searchbar" placeholder="Type city here..." autoFocus="on" />
            <input type="submit" className="submit" value="search"/> 
+           <button className="currentLocation">Current Location</button>
        </div>
     )
 }

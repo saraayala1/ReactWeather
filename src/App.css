@@ -10,13 +10,15 @@
   margin-top: 50px;
   max-width: 600px;
   padding-bottom: 25px;
-  padding-top: 30px;
+  padding-top: 25px;
 }
 .searchbar,
-.submit {
+.submit,
+.currentLocation {
   border-color: darkblue;
   border-radius: 10px;
   color: darkblue;
   font-size: 20px;
+  margin-left: 10px;
   padding: 5px 10px;
 }
