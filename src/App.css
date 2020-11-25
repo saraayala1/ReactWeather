@@ -7,14 +7,16 @@
   border-style: solid;
   box-shadow: 5px 10px 18px;
   margin: auto;
+  margin-top: 50px;
   max-width: 600px;
+  padding-bottom: 25px;
+  padding-top: 30px;
 }
-.searchbar {
+.searchbar,
+.submit {
   border-color: darkblue;
   border-radius: 10px;
-  padding: 2px 5px;
-}
-.submit {
-  border-radius: 10px;
-  padding: 2px 5px;
+  color: darkblue;
+  font-size: 20px;
+  padding: 5px 10px;
 }
