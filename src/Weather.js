@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.css';
 import './App.css'
 
 export default function Weather(){
@@ -26,7 +27,7 @@ function handleSubmit(event){
     setCity(event.target.value);
   }
   
-let form=(
+let form= (
         <form onSubmit={handleSubmit}>
            <input type="search"
             className="searchbar"
@@ -38,20 +39,28 @@ let form=(
        </form>   
     );
     return (
-        <div>
+<div>
         {form}
-    <ul>
-        <li>
+  <div className="container">
+    <ul className="rows">
+        <div className="col-3">
+          <li>
             <img src={weather.icon} alt={weather.description} />
-        </li>
-        <li>Description: {weather.description}</li> 
-        <li>Temperature: {Math.round(weather.temperature)}°C|°F</li>
-        <li>Feels Like: {weather.feelsLike}°C|°F</li>
-        <li>Humidity: {weather.humidity}%</li>
-        <li>Min: {weather.tempMin}°C|°F</li>
-        <li>Max: {weather.tempMax}°C|°F</li>
-        <li>Wind: {Math.round(weather.wind)}km/h</li>
-        </ul>
-    </div>
+          </li>
+          <li>Description: {weather.description}</li> 
+        </div>
+        <div className="col-3">
+          <li>Temperature: {Math.round(weather.temperature)}°C|°F</li>
+          <li>Feels Like: {weather.feelsLike}°C|°F</li>
+          <li>Humidity: {weather.humidity}%</li>
+        </div>
+        <div className="col-3">
+          <li>Min: {weather.tempMin}°C|°F</li>
+          <li>Max: {weather.tempMax}°C|°F</li>
+          <li>Wind: {Math.round(weather.wind)}km/h</li>
+        </div>
+    </ul>
+  </div>
+</div>
     );
 }
