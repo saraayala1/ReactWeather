@@ -43,16 +43,25 @@ let form=(
     return (
         <div>
         {form}
-        {weather}
-    </div>);
+            <ul>
+          <li>Temperature: {Math.round(weather.temperature)}°F</li>
+          <li>Description: {weather.description}</li>
+          <li>Feels Like: {weather.feelsLike}</li>
+          <li>Humidity: {weather.humidity}%</li>
+          <li>Min: {weather.tempMin}</li>
+          <li>Max: {weather.tempMax}</li>
+          <li>Wind: {weather.wind}km/h</li>
+          <li>
+            <img src={weather.icon} alt={weather.description} />
+          </li>
+        </ul>
+    </div>
+    );
 } else{
     return(
         <div>
         {form}
         </div>
     );
-}
-
-
-
+  }
 }
