@@ -50,7 +50,7 @@ let form= (
           <li>{weather.description}</li> 
         </div>
         <div className="col-4">
-          <li>Temperature: {Math.round(weather.temperature)}<span className="units">°C|°F</span></li>
+          <li>Temp: {Math.round(weather.temperature)}<span className="units">°C|°F</span></li>
           <li>Feels Like: {weather.feelsLike}<span className="units">°C|°F</span></li>
           <li>Humidity: {weather.humidity}%</li>
         </div>
