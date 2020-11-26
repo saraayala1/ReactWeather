@@ -7,14 +7,14 @@ let [city, setCity]= useState(" ");
 let [weather, setWeather]= useState(" ");
 function handleResponse(response){
     setWeather=({
-    temperature= (response.data.main.temp),
-    feelsLike= (response.data.main.feels_like),
-    humidity= (response.data.main.humidity),
-    tempMax= (response.data.main.temp_max),
-    tempMin= (response.data.main.temp_min),
-    description= (response.data.weather[0].description),
-    icon= `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-    wind= (response.data.wind.speed)
+    temperature: Math.round(response.data.main.temp),
+    feelsLike: Math.round(response.data.main.feels_like),
+    humidity: response.data.main.humidity,
+    tempMax: Math.round(response.data.main.temp_max),
+    tempMin: Math.round(response.data.main.temp_min),
+    description: response.data.weather[0].description,
+    icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+    wind: response.data.wind.speed
     });
 }
 function handleSubmit(event){
