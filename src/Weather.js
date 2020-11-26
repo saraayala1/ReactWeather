@@ -42,7 +42,7 @@ let form= (
 <div>
         {form}
   <div className="container">
-    <ul className="rows">
+    <ul className="row">
         <div className="col-3">
           <li>
             <img src={weather.icon} alt={weather.description} />
