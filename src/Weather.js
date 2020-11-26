@@ -50,13 +50,13 @@ let form= (
           <li>{weather.description}</li> 
         </div>
         <div className="col-4">
-          <li>Temperature: {Math.round(weather.temperature)}°C|°F</li>
-          <li>Feels Like: {weather.feelsLike}°C|°F</li>
+          <li>Temperature: {Math.round(weather.temperature)}<span className="units">°C|°F</span></li>
+          <li>Feels Like: {weather.feelsLike}<span className="units">°C|°F</span></li>
           <li>Humidity: {weather.humidity}%</li>
         </div>
         <div className="col-4">
-          <li>Min: {weather.tempMin}°C|°F</li>
-          <li>Max: {weather.tempMax}°C|°F</li>
+          <li>Min: {weather.tempMin}<span className="units">°C|°F</span></li>
+          <li>Max: {weather.tempMax}<span className="units">°C|°F</span></li>
           <li>Wind: {Math.round(weather.wind)}km/h</li>
         </div>
     </ul>
