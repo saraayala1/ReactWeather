@@ -3,12 +3,12 @@ import axios from "axios";
 import './App.css'
 
 export default function Weather(){
-let [city, setCity]= useState(" ");
-let [loaded, setLoaded]=useState(false)
-let [weather, setWeather]= useState(" ");
+const [city, setCity]= useState(" ");
+const [loaded, setLoaded]=useState(false)
+const [weather, setWeather]= useState(" ");
 function handleResponse(response){
     setLoaded(true);
-    setWeather=({
+    setWeather({
     temperature: Math.round(response.data.main.temp),
     feelsLike: Math.round(response.data.main.feels_like),
     humidity: response.data.main.humidity,
@@ -43,7 +43,7 @@ let form=(
     return (
         <div>
         {form}
-            <ul>
+    <ul>
           <li>Temperature: {Math.round(weather.temperature)}°F</li>
           <li>Description: {weather.description}</li>
           <li>Feels Like: {weather.feelsLike}</li>
