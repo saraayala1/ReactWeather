@@ -4,10 +4,8 @@ import './App.css'
 
 export default function Weather(){
 const [city, setCity]= useState(" ");
-const [loaded, setLoaded]=useState(false)
 const [weather, setWeather]= useState(" ");
 function handleResponse(response){
-    setLoaded(true);
     setWeather({
     temperature: Math.round(response.data.main.temp),
     feelsLike: Math.round(response.data.main.feels_like),
@@ -39,29 +37,21 @@ let form=(
            <button className="currentLocation">Current Location</button>
        </form>   
     );
-    if(loaded){
     return (
         <div>
         {form}
     <ul>
-          <li>Temperature: {Math.round(weather.temperature)}°F</li>
-          <li>Description: {weather.description}</li>
-          <li>Feels Like: {weather.feelsLike}</li>
-          <li>Humidity: {weather.humidity}%</li>
-          <li>Min: {weather.tempMin}</li>
-          <li>Max: {weather.tempMax}</li>
-          <li>Wind: {weather.wind}km/h</li>
-          <li>
+        <li>
             <img src={weather.icon} alt={weather.description} />
-          </li>
+        </li>
+        <li>Description: {weather.description}</li> 
+        <li>Temperature: {Math.round(weather.temperature)}°C|°F</li>
+        <li>Feels Like: {weather.feelsLike}°C|°F</li>
+        <li>Humidity: {weather.humidity}%</li>
+        <li>Min: {weather.tempMin}°C|°F</li>
+        <li>Max: {weather.tempMax}°C|°F</li>
+        <li>Wind: {Math.round(weather.wind)}km/h</li>
         </ul>
     </div>
     );
-} else{
-    return(
-        <div>
-        {form}
-        </div>
-    );
-  }
 }

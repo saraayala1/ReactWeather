@@ -17,7 +17,7 @@
 .currentLocation {
   border-color: darkblue;
   border-radius: 10px;
-  color: darkblue;
+  color: rgb(0, 0, 71);
   font-size: 20px;
   margin-left: 10px;
   padding: 5px 10px;
@@ -31,4 +31,8 @@
 }
 h1 {
   color: rgb(0, 0, 71);
+}
+ul {
+  color: rgb(0, 0, 71);
+  list-style: none;
 }
