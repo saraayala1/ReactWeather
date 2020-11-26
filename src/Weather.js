@@ -4,8 +4,10 @@ import './App.css'
 
 export default function Weather(){
 let [city, setCity]= useState(" ");
+let [loaded, setLoaded]=useState(false)
 let [weather, setWeather]= useState(" ");
 function handleResponse(response){
+    setLoaded(true);
     setWeather=({
     temperature: Math.round(response.data.main.temp),
     feelsLike: Math.round(response.data.main.feels_like),
@@ -28,7 +30,7 @@ function handleSubmit(event){
   
 let form=(
         <form onSubmit={handleSubmit}>
-           <input type="text"
+           <input type="search"
             className="searchbar"
             placeholder="Type city here..."
             autoFocus="on" 
@@ -36,10 +38,21 @@ let form=(
            <input type="submit" className="submit" value="Search"/> 
            <button className="currentLocation">Current Location</button>
        </form>   
-    )
+    );
+    if(loaded){
     return (
         <div>
         {form}
         {weather}
-    </div>)
-} 
+    </div>);
+} else{
+    return(
+        <div>
+        {form}
+        </div>
+    );
+}
+
+
+
+}
