@@ -43,18 +43,18 @@ let form= (
         {form}
   <div className="container">
     <ul className="row">
-        <div className="col-3">
+        <div className="col-4">
           <li>
             <img src={weather.icon} alt={weather.description} />
           </li>
-          <li>Description: {weather.description}</li> 
+          <li>{weather.description}</li> 
         </div>
-        <div className="col-3">
+        <div className="col-4">
           <li>Temperature: {Math.round(weather.temperature)}°C|°F</li>
           <li>Feels Like: {weather.feelsLike}°C|°F</li>
           <li>Humidity: {weather.humidity}%</li>
         </div>
-        <div className="col-3">
+        <div className="col-4">
           <li>Min: {weather.tempMin}°C|°F</li>
           <li>Max: {weather.tempMax}°C|°F</li>
           <li>Wind: {Math.round(weather.wind)}km/h</li>

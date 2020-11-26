@@ -34,5 +34,8 @@ h1 {
 }
 ul {
   color: rgb(0, 0, 71);
+  font-size: 18px;
   list-style: none;
+  padding-top: 10px;
+  text-align: center;
 }
