@@ -8,12 +8,12 @@ function App() {
       <div className="appBox">
      <h1>Weather Forecast</h1>
       <Weather />
-      <Forecast day='Monday'/>
-      <Forecast day='Tuesday' />
-      <Forecast day='Wednesday'/>
-      <Forecast day='Thursday'/>
-      <Forecast day='Friday'/>
-      <Forecast day='Saturday'/>
+      <Forecast day="Monday"/>
+      <Forecast day="Tuesday" />
+      <Forecast day="Wednesday"/>
+      <Forecast day="Thursday"/>
+      <Forecast day="Friday"/>
+      <Forecast day="Saturday"/>
    </div>
     </div>
   );
