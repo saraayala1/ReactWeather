@@ -1,6 +1,6 @@
 import React from "react";
 import ReactAnimatedWeather from 'react-animated-weather';
-
+import "./App.css"
 export default function Forecast(props){
     return(
         <span className="forecastUnit">

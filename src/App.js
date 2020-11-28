@@ -9,8 +9,7 @@ function App() {
      <h1>Weather Forecast</h1>
       <Weather />
       <Forecast day="Monday" icon="CLEAR_DAY"/>
-      <Forecast day="Tuesday" icon="
-PARTLY_CLOUDY_DAY" />
+      <Forecast day="Tuesday" icon="PARTLY_CLOUDY_DAY"/>
       <Forecast day="Wednesday" icon="CLOUDY"/>
       <Forecast day="Thursday" icon="RAIN"/>
       <Forecast day="Friday"icon="SLEET"/>
