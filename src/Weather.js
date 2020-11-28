@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css'
-import Forecast from "./Forecast"
+
 
 export default function Weather(){
 const [city, setCity]= useState(" ");
@@ -62,7 +62,7 @@ let form= (
         </div>
     </ul>
   </div>
-<Forecast />
+
 </div>
     );
 }
