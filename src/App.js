@@ -8,7 +8,7 @@ function App() {
       <div className="container">
         <div className="appBox">
           <h1>Weather Forecast</h1>
-           <Weather />
+           <Weather/>
            <div className="row">
            <Forecast day="Mon" icon="CLEAR_DAY"/>
            <Forecast day="Tues" icon="PARTLY_CLOUDY_DAY"/>
