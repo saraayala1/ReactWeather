@@ -17,7 +17,7 @@ function handleResponse(response){
     humidity: response.data.main.humidity,
     max: Math.round(response.data.main.temp_max),
     min: Math.round(response.data.main.temp_min),
-    date: new Date(response.data.dt * 1000),
+    date: (response.data.dt * 1000),
     description: response.data.weather[0].description,
     icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
     wind: Math.round(response.data.wind.speed)
@@ -25,8 +25,7 @@ function handleResponse(response){
 }
 function handleSubmit(event){
     event.preventDefault();
-    let unit ="imperial"
-      let url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d65010f0ee255fc171c7d8183e8bf68a&units=${unit}`
+      let url=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=d65010f0ee255fc171c7d8183e8bf68a&units=imperial`
     axios.get(url).then(handleResponse)
 }
  function updateCity(event) {
