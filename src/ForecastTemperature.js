@@ -19,9 +19,6 @@ setUnit("metric")
     );
 }else {
 let metric= Math.round((props.imperial-32)*5/9);
-let min=Math.round((props.imperialMin-32)*5/9);
-let max=Math.round((props.imperialMax-32)*5/9);
-let feelsLike=Math.round((props.imperialFeels-32)*5/9);
 
     return (
          <div>
