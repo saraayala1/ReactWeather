@@ -12,8 +12,14 @@
   padding-bottom: 25px;
   padding-top: 25px;
 }
+.forecastDescription {
+  font-size: 18px;
+}
+.forecastTemp {
+  font-size: 30px;
+}
 .forecastUnits {
-  display: inline;
+  font-size: 15px;
 }
 .formattedDate {
   font-size: 16px;
@@ -50,18 +56,17 @@
   position: absolute;
   top: 10px;
 }
+.windHumidity {
+  color: rgb(0, 0, 71);
+  font-size: 25px;
+  list-style: none;
+  padding-top: 10px;
+  text-align: center;
+}
 footer {
   padding: 10px 10px;
 }
 h1 {
   color: rgb(0, 0, 71);
   margin-bottom: 20px;
-}
-
-ul {
-  color: rgb(0, 0, 71);
-  font-size: 25px;
-  list-style: none;
-  padding-top: 10px;
-  text-align: center;
 }

@@ -3,7 +3,8 @@ import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css'
 import FormattedDate from './FormattedDate';
-
+import WeatherTemperature from './WeatherTemperature';
+import Forecast from "./Forecast"
 
 export default function Weather(){
 const [city, setCity]= useState(" ");
@@ -14,12 +15,12 @@ function handleResponse(response){
     temperature: Math.round(response.data.main.temp),
     feelsLike: Math.round(response.data.main.feels_like),
     humidity: response.data.main.humidity,
-    tempMax: Math.round(response.data.main.temp_max),
-    tempMin: Math.round(response.data.main.temp_min),
+    max: Math.round(response.data.main.temp_max),
+    min: Math.round(response.data.main.temp_min),
     date: new Date(response.data.dt * 1000),
     description: response.data.weather[0].description,
     icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-    wind: response.data.wind.speed
+    wind: Math.round(response.data.wind.speed)
 });
 }
 function handleSubmit(event){
@@ -32,6 +33,17 @@ function handleSubmit(event){
     setCity(event.target.value);
   }
   
+function searchLocation(position) {
+  let apiKey = "8eac7d0daaee5ecadb550cc3c656f342";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(handleResponse);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+} 
+
 let form= (
         <form onSubmit={handleSubmit}>
            <input type="search"
@@ -40,34 +52,30 @@ let form= (
             autoFocus="on" 
             onChange={updateCity}/>
            <input type="submit" className="submit" value="Search"/> 
-           <button className="currentLocation">Current Location</button>
+          <button className="currentLocation" onClick={getCurrentLocation}>Current Location</button>   
        </form>   
     );
     return (
 <div>
         {form}
   <div className="container">
-      <ul className="row">
+      <div className="row">
         <div className="col-4">
     <FormattedDate date={weather.date} name={weather.name} description ={weather.description} />
+           <img src={weather.icon} alt={weather.description} className="icon"/>
         </div>
-        <div className="col-3">
-          <li>
-            <img src={weather.icon} alt={weather.description} className="icon"/>
-          </li>
+        <div className="col-4">
+  <WeatherTemperature  imperial={weather.temperature} imperialMin={weather.min}
+          imperialMax={weather.max} imperialFeels={weather.feelsLike} />
         </div>
-        <div className="col-3">
-          <li><span className="mainTemp">{weather.temperature}</span><span className="units">°C|°F</span></li>
-          <li><span className="minMax">{weather.tempMin}/{weather.tempMax}</span>°</li>
+        <div className="windHumidity col-4">
+          <br />
+          <div>Humidity: {weather.humidity}%</div>
+          <div>Wind: {weather.wind}km/h</div>
         </div>
-        <div>
-          <span className="col-2">Feels Like: {weather.feelsLike}°</span> 
-          <span className="col-2">Humidity: {weather.humidity}%</span>
-          <span className="col-2">Wind: {weather.wind}km/h</span>
-        </div>
-    </ul>
+    </div>
   </div>
-
+         <Forecast city={weather.name} />
 </div>
     );
 }
